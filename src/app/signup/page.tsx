@@ -12,7 +12,7 @@ import CustomInput from '@/components/CustomInput'
 
 export default function SignupPage() {
   const router = useRouter()
-  const [imagenCargada, setImagenCargada] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [user, setUser] = useState({
     username: '',
     // currency: '',
@@ -26,8 +26,7 @@ export default function SignupPage() {
     const img = new Image();
     img.src = "/assets/oceantealwpp.jpg";
     img.onload = () => {
-      console.log('img loaded')
-      setImagenCargada(true);
+      setImageLoaded(true);
     };
   }, []);
 
@@ -48,7 +47,7 @@ export default function SignupPage() {
 
   return (
     <>
-      {imagenCargada
+      {imageLoaded
         ? (
           <div
             className='flex flex-col min-h-screen overflow-hidden'
